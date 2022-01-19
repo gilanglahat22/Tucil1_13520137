@@ -1,2 +1,3 @@
 # Tucil1_13520137
-Tucil1_IF2211_Strategi Algoritma
+
+Program Penyelesaian Word Search Puzzle dengan algoritma Brute Force
