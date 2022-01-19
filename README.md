@@ -1,0 +1,2 @@
+# Tucil1_13520137
+Tucil1_IF2211_Strategi Algoritma
