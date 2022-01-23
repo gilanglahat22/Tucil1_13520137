@@ -27,7 +27,7 @@ void convertTXT(){
     // Membuka File Inputan
 
     ifstream ifs;
-    ifs.open("../test/stars.txt");
+    ifs.open("../test/big3.txt");
 
     if (ifs.is_open()){
 
@@ -155,7 +155,8 @@ void PrintSolusi(){
 // Procedure untuk solusi dalam bentuk koordinat kata yang ingin dicari
 void solve(){
     for (int k = 0; k < tampung_kata.size(); k++){
-        // Memasukkan setiap koordinat dari setiap karakter ke dalam vektor of vektor
+        // Algoritma Brute Force untuk mencari setiap kata yang ingin dicari di puzzle
+        // Kemudian simpan setiap koordinat dari setiap karakter yang terdapat di puzzle dari kata yang ingin dicari
         for (int row = 0; row < tampung_char.size(); row++){
             for (int col = 0; col < tampung_char[row].size(); col++){
                 if (tampung_kata[k][0] == tampung_char[row][col])
