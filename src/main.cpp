@@ -21,6 +21,7 @@ bool file_berhasil_dibuka = true;
 int moveX[] = { -1, -1, -1, 1, 1, 1, 0, 0 };
 int moveY[] = { -1, 0, 1, -1, 0, 1, -1, 1 };
 
+// Memasukkan data isi file txt ke vektor
 void convertTXT(){
     // Membuka File Inputan
 
@@ -153,6 +154,7 @@ void PrintSolusi(){
     SetConsoleTextAttribute(h, 7);
 }
 
+// Solusi dalam bentuk koordinat kata yang ingin dicari
 void solve(){
     for (int i = 0; i < tampung_kata.size(); i++){
         // Memasukkan setiap koordinat dari setiap karakter ke dalam vektor of vektor
