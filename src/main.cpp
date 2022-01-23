@@ -21,12 +21,12 @@ bool file_berhasil_dibuka = true;
 int moveX[] = { -1, -1, -1, 1, 1, 1, 0, 0 };
 int moveY[] = { -1, 0, 1, -1, 0, 1, -1, 1 };
 
-// Memasukkan data isi file txt ke vektor
+// Procedure untuk memasukkan data isi file txt ke vektor
 void convertTXT(){
     // Membuka File Inputan
 
     ifstream ifs;
-    ifs.open("../test/big3.txt");
+    ifs.open("../test/puzzle2.txt");
 
     if (ifs.is_open()){
 
@@ -100,7 +100,7 @@ bool Check_Indeks(vector<vector<int> > vecX, vector<vector<int> > vecY, int inde
     return false;
 }
 
-// Fungsi untuk memasukkan setiap koordinat dari setiap karakter 
+// Procedure untuk memasukkan setiap koordinat dari setiap karakter 
 // Ke dalam vektor of vektor
 void Simpan_koordinat(vector<vector<char> >tampung_char, string word){
     for (int row = 0; row < tampung_char.size(); row++){
@@ -150,7 +150,7 @@ void PrintSolusi(){
     SetConsoleTextAttribute(h, 7);
 }
 
-// Solusi dalam bentuk koordinat kata yang ingin dicari
+// Procedure untuk solusi dalam bentuk koordinat kata yang ingin dicari
 void solve(){
     for (int i = 0; i < tampung_kata.size(); i++){
         // Memasukkan setiap koordinat dari setiap karakter ke dalam vektor of vektor
