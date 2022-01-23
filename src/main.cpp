@@ -38,12 +38,8 @@ void convertTXT(){
         while( getline( ifs, line ) )
         {
             vector<char> temp;
-            if (line != ""){
+            if (!line.empty()){
                 int indeks = 0;
-                if( line.empty() )
-                {
-                    continue;
-                }
                 while (indeks < line.length()){
                     if (line[indeks] != ' '){
                         temp.push_back(line[indeks]);
@@ -178,7 +174,7 @@ int main()
         PrintSolusi();
 
         cout << endl;
-        
+
         // Waktu eksekusi selesai
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
