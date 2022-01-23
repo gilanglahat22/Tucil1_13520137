@@ -103,64 +103,6 @@ int Check_Indeks(vector<vector<int> > vecX, vector<vector<int> > vecY, int indek
     return 0;
 }
 
-// Procedure untuk memasukkan setiap koordinat dari setiap karakter 
-// Ke dalam vektor of vektor
-void Simpan_koordinat(vector<vector<char> >tampung_char, string word){
-    for (int row = 0; row < tampung_char.size(); row++){
-        for (int col = 0; col < tampung_char[row].size(); col++){
-            if (word[0] == tampung_char[row][col])
-            {
-                for (int arah = 0; arah < 8; arah++)
-                {
-                    // Jika digit ke-2 sampai digit terakhir dari huruf yang akan diperiksa di puzzle ditemukan, 
-                    // Maka masukkan koordinat-koordinat huruf tersebut pada puzzle 
-                    // Dengan cara memasukkan masing-masing absis dan ordinat tersebut ke dalam tempX dan tempY 
-                    // kemudian masukkan ke dalam vecX dan VecY
-                    if (Search_8_Direction(word, tampung_char, row, col, moveX[arah], moveY[arah])){
-                        vector<int> tempPenunjukArah;
-                        vector<int> tempX;
-                        vector<int> tempY;
-                        for (int i = 0; i < word.length(); i++){
-                            tempX.push_back(col + (i * moveX[arah]));
-                            tempY.push_back(row + (i * moveY[arah]));
-
-                            // Menyimpan arah dari setiap titik
-                            if (moveX[arah] == -1 & moveY[arah] == -1){
-                                tempPenunjukArah.push_back(1);
-                            }
-                            else if (moveX[arah] == -1 & moveY[arah] == 1){
-                                tempPenunjukArah.push_back(2);
-                            }
-                            else if (moveX[arah] == 1 & moveY[arah] == -1){
-                                tempPenunjukArah.push_back(3);
-                            }
-                            else if (moveX[arah] == 1 & moveY[arah] == 1){
-                                tempPenunjukArah.push_back(4);
-                            }
-                            else if (moveX[arah] == 0 & moveY[arah] == -1){
-                                tempPenunjukArah.push_back(5);
-                            }
-                            else if (moveX[arah] == -1 & moveY[arah] == 0){
-                                tempPenunjukArah.push_back(6);
-                            }
-                            else if (moveX[arah] == 0 & moveY[arah] == 1){
-                                tempPenunjukArah.push_back(7);
-                            }
-                            else if (moveX[arah] == 1 & moveY[arah] == 0){
-                                tempPenunjukArah.push_back(8);
-                            }
-                        }
-                        vecX.push_back(tempX);
-                        vecY.push_back(tempY);
-                        Penunjuk_arah.push_back(tempPenunjukArah);
-                    } 
-                }
-            }
-            banyak_pengecekan++;
-        }
-    }
-}
-
 // Procedure untuk menampikan Solusi berbentuk matriks ke layar
 void PrintSolusi(){
     for (int i = 0; i < tampung_char.size(); i++){
@@ -212,9 +154,61 @@ void PrintSolusi(){
 
 // Procedure untuk solusi dalam bentuk koordinat kata yang ingin dicari
 void solve(){
-    for (int i = 0; i < tampung_kata.size(); i++){
+    for (int k = 0; k < tampung_kata.size(); k++){
         // Memasukkan setiap koordinat dari setiap karakter ke dalam vektor of vektor
-        Simpan_koordinat(tampung_char, tampung_kata[i]);
+        for (int row = 0; row < tampung_char.size(); row++){
+            for (int col = 0; col < tampung_char[row].size(); col++){
+                if (tampung_kata[k][0] == tampung_char[row][col])
+                {
+                    for (int arah = 0; arah < 8; arah++)
+                    {
+                        // Jika digit ke-2 sampai digit terakhir dari huruf yang akan diperiksa di puzzle ditemukan, 
+                        // Maka masukkan koordinat-koordinat huruf tersebut pada puzzle 
+                        // Dengan cara memasukkan masing-masing absis dan ordinat tersebut ke dalam tempX dan tempY 
+                        // kemudian masukkan ke dalam vecX dan VecY
+                        if (Search_8_Direction(tampung_kata[k], tampung_char, row, col, moveX[arah], moveY[arah])){
+                            vector<int> tempPenunjukArah;
+                            vector<int> tempX;
+                            vector<int> tempY;
+                            for (int i = 0; i < tampung_kata[k].length(); i++){
+                                tempX.push_back(col + (i * moveX[arah]));
+                                tempY.push_back(row + (i * moveY[arah]));
+
+                                // Menyimpan arah dari setiap titik
+                                if (moveX[arah] == -1 & moveY[arah] == -1){
+                                    tempPenunjukArah.push_back(1);
+                                }
+                                else if (moveX[arah] == -1 & moveY[arah] == 1){
+                                    tempPenunjukArah.push_back(2);
+                                }
+                                else if (moveX[arah] == 1 & moveY[arah] == -1){
+                                    tempPenunjukArah.push_back(3);
+                                }
+                                else if (moveX[arah] == 1 & moveY[arah] == 1){
+                                    tempPenunjukArah.push_back(4);
+                                }
+                                else if (moveX[arah] == 0 & moveY[arah] == -1){
+                                    tempPenunjukArah.push_back(5);
+                                }
+                                else if (moveX[arah] == -1 & moveY[arah] == 0){
+                                    tempPenunjukArah.push_back(6);
+                                }
+                                else if (moveX[arah] == 0 & moveY[arah] == 1){
+                                    tempPenunjukArah.push_back(7);
+                                }
+                                else if (moveX[arah] == 1 & moveY[arah] == 0){
+                                    tempPenunjukArah.push_back(8);
+                                }
+                            }
+                            vecX.push_back(tempX);
+                            vecY.push_back(tempY);
+                            Penunjuk_arah.push_back(tempPenunjukArah);
+                        } 
+                    }
+                }
+                banyak_pengecekan++;
+            }
+        }
     }
 }
 
