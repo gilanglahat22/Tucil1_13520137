@@ -27,7 +27,7 @@ void convertTXT(){
     // Membuka File Inputan
 
     ifstream ifs;
-    ifs.open("../test/big3.txt");
+    ifs.open("../test/bigeurope.txt");
 
     if (ifs.is_open()){
 
@@ -222,17 +222,17 @@ int main()
         clock_t start, end;
         start = clock();
         
-        // Proses melakukan brute force
+        // Proses melakukan eksekusi brute force
         solve();
+
+        // Waktu eksekusi selesai
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         // Menampilkan solusi
         PrintSolusi();
 
         cout << endl;
-
-        // Waktu eksekusi selesai
-        end = clock();
-        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
         // Menampilkan waktu eksekusi program
         cout << "Waktu Eksekusi Program : " << fixed << time_taken * 1000 << setprecision(5); 
         cout << " ms " << endl;
