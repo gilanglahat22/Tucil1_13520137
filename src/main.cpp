@@ -74,7 +74,7 @@ bool Search_8_Direction(string word, vector<vector<char> >tampung_char, int row,
     int j = 1, RD = row + moveY, CD = col + moveX;
     
     // Jika RD dan CD tidak overbound dan setiap huruf ke j cocok
-    while ((j < word.length()) && (RD < tampung_char.size() && CD < tampung_char[0].size() && RD >= 0 && CD >= 0) && (word[j] == tampung_char[RD][CD]))
+    while ((j < word.length()) && (RD < tampung_char.size() && CD < tampung_char[row].size() && RD >= 0 && CD >= 0) && (word[j] == tampung_char[RD][CD]))
     {
         // Jika cocok, bergerak lagi
         CD += moveX;
