@@ -2,7 +2,9 @@
 Tugas Kecil 1 Strategi Algoritma (Penyelesaian Word Search Puzzle dengan algoritma Brute Force)
 
 # Author
-Muhammad Gilang Ramadhan (13520137)
+NAMA  : Muhammad Gilang Ramadhan 
+NIM   : 13520137
+KELAS : K-02
 
 ## Struktur Repository :
 1. **doc** -> lokasi penyimpanan laporan tugas kecil.
