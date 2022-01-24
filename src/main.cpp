@@ -27,7 +27,7 @@ void convertTXT(){
     // Membuka File Inputan
 
     ifstream ifs;
-    ifs.open("../test/bigeurope.txt");
+    ifs.open("../test/Test 8_large_34 x 34.txt");
 
     if (ifs.is_open()){
 
